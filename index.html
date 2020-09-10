@@ -1,0 +1,70 @@
+<html>
+	<head>
+    <meta charset="utf-8">
+    <html dir="ltr" mozdisallowselectionprint>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
+		<title>Pdf Proofread Page</title>
+
+		<script type="text/javascript" src="/lib/resizable.js"></script>
+		<script type="text/javascript" src="lib/ckeditor/ckeditor.js"></script>
+		<script type="text/javascript" src="lib/pdfjs/pdf.min.js"></script>
+		<script type="text/javascript" src="lib/pdf-proofreadpage.js"></script>
+
+	</head>
+
+	<body>
+
+		<div id="main">
+			<div class="resizable-left" id="win1">
+		 		<textarea id="editor"></textarea> 
+				<script>
+				  initSample();
+				</script>
+			</div>
+			<div class="resizable-right" id="win2">
+				<div id="mainContainer">
+					<div class="toolbar">
+					  <div id="toolbarContainer">
+						<div id="toolbarViewer">
+						  <div id="toolbarViewerLeft">
+							<div id="pager" class="splitToolbarButton hiddenSmallView">
+							  <button class="toolbarButton pageUp" title="Previous Page" data-pager="prev" tabindex="13" data-l10n-id="previous">
+								<span data-l10n-id="previous_label">Previous</span>
+							  </button>
+							  <div class="splitToolbarButtonSeparator"></div>
+							  <button class="toolbarButton pageDown" title="Next Page" data-pager="next" tabindex="14" data-l10n-id="next">
+								<span data-l10n-id="next_label">Next</span>
+							  </button>
+							</div>
+							<input type="number" id="pageNumber" class="toolbarField pageNumber" title="Page" value="1" size="4" min="1" tabindex="15" data-l10n-id="page" autocomplete="off">
+							<span id="numPages" class="toolbarLabel">di <span id="page_count"></span></span>
+						  </div>
+						  <div id="toolbarViewerRight">
+							<span class="toolbarLabel">Zoom</span>
+							<div id="pagerZoom" class="splitToolbarButton">
+								<button id="zoomOut" class="toolbarButton zoomOut" title="Zoom Out" data-pager-zoom="zoom_out" tabindex="21" data-l10n-id="zoom_out">
+								  <span data-l10n-id="zoom_out_label">Zoom Out</span>
+								</button>
+								<div class="splitToolbarButtonSeparator"></div>
+								<button id="zoomIn" class="toolbarButton zoomIn" title="Zoom In" data-pager-zoom="zoom_in" tabindex="22" data-l10n-id="zoom_in">
+								  <span data-l10n-id="zoom_in_label">Zoom In</span>
+								 </button>
+							  </div>
+						  </div>
+						</div>
+					  
+					  </div>
+					</div>
+		  
+					<div id="viewerContainer">
+					  <div role="main" id="pdfviewport">
+						  <canvas id="pdf-canvas"></canvas>
+					  </div>
+					</div>
+				  </div> <!-- mainContainer -->
+			</div>
+		</div>
+
+	</body>
+</html>
