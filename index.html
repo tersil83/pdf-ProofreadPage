@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-<script>
-    function changePage(pageUrl, idPdf) {
-      document.location.href = pageUrl + "?idPdf=" + idPdf;
-    }
-  </script>
+<title>Elenco pdf</title>
 </head>
 
 <body>
-    <button onclick="changePage('./viewer.html', 4998)">Apri PDF 4998</button>
+  <h1>Elenco Pdf da aprire con Pdf Proofread Page</h1>
+  <input type=button onClick="location.href='viewer.html?idPdf=4997'" value='Apri PDF 4997'>
+  <br><br>
+  <input type=button onClick="location.href='viewer.html?idPdf=4998'" value='Apri PDF 4998'>
 </body>
 </html>
