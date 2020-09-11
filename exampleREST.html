@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Prova api</title>
+    </head>
+    <body>
+        <script>
+            // Create a request variable and assign a new XMLHttpRequest object to it.
+            var request = new XMLHttpRequest()
+
+            // Open a new connection, using the GET request on the URL endpoint
+            request.open('GET', 'https://www.dir-toolbox.com:8443/toolbox/documentocr.json?documentId=4997', true)
+
+            request.onload = function () {
+                var data = JSON.parse(this.response) 
+                numPag = 2
+                if (request.status >= 200 && request.status < 400) {
+                // Begin accessing JSON data here
+                    for (let index = 0; index < data.payload.length; index++) {
+                        if (data.payload[index].page === numPag)
+                            console.log(data.payload[index].page,data.payload[index].content)   
+                    }
+                } else {
+                    console.log('error')
+                }
+            }
+
+            // Send request
+            request.send()
+            
+        </script>
+    </body>
+</html>
